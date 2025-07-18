@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://i1hpdyo7qidr"]
+
+[ext_resource type="Script" uid="uid://bun7j6xdg2pc7" path="res://Weapons/PongWeapon/State/state_manager.gd" id="1_cqo5s"]
+[ext_resource type="Script" uid="uid://bfsp1nbm2iwfp" path="res://Weapons/PongWeapon/State/carried.gd" id="2_dn7fv"]
+[ext_resource type="Script" uid="uid://dg6id73stkebv" path="res://Weapons/PongWeapon/State/charge.gd" id="3_dn7fv"]
+
+[node name="PongWeaponStateMachine" type="Node"]
+script = ExtResource("1_cqo5s")
+
+[node name="Carried" type="Node" parent="."]
+script = ExtResource("2_dn7fv")
+
+[node name="Charge" type="Node" parent="."]
+script = ExtResource("3_dn7fv")

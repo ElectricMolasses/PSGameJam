@@ -1,6 +1,9 @@
 class_name State extends Node
 
 
+func new() -> State:
+	return self
+
 ##	State based input management. Accept all actions and handle the
 ##   allowable ones.
 func handle_action(action: Action) -> State:
@@ -18,8 +21,8 @@ func exit() -> void:
 func initialize() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func run_process(delta: float) -> void:
 	pass
 
-func _physics_process(delta: float) -> void:
+func run_physics_process(delta: float) -> void:
 	pass

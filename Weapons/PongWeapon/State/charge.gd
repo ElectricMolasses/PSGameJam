@@ -30,9 +30,12 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func run_process(delta: float) -> void:
 	current_charge += charge_speed * delta
 	clamp(current_charge, 0, charge_max)
 
-func _physics_process(_delta: float) -> void:
+func run_physics_process(_delta: float) -> void:
 	pass
+
+func set_chase_node(chase_node: Node2D) -> void:
+	self.chase_node = chase_node
