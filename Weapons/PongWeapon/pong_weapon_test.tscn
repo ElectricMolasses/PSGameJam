@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfrogia3yllwu"]
+
+[ext_resource type="PackedScene" uid="uid://bfb2ggi0rsmgc" path="res://Weapons/PongWeapon/pong_weapon.tscn" id="1_re5ie"]
+
+[node name="PongWeaponTest" type="Node2D"]
+
+[node name="PongWeapon" parent="." instance=ExtResource("1_re5ie")]

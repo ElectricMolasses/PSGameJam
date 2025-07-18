@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfb2ggi0rsmgc"]
+
+[ext_resource type="Script" uid="uid://dawrh5wpvckes" path="res://Weapons/PongWeapon/pong_weapon.gd" id="1_uvu1x"]
+[ext_resource type="Texture2D" uid="uid://dc70jnbhj3sy7" path="res://icon.svg" id="2_kxxi3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71kk5"]
+
+[node name="WeaponBody" type="RigidBody2D"]
+script = ExtResource("1_uvu1x")
+
+[node name="WeaponCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_71kk5")
+
+[node name="WeaponSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_kxxi3")
