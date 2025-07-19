@@ -6,6 +6,7 @@ extends State
 @export var charge_max: float = 2
 
 var current_charge: float = 0
+var exiting: bool = false
 
 
 func handle_action(action: int) -> State:
@@ -23,14 +24,19 @@ func handle_action(action: int) -> State:
 	return self
 
 func enter() -> void:
-	weapon.gravity_scale = 0.0
+	exiting = false
 	weapon.collision_layer = 0
 	weapon.collision_mask = 0
 
 func exit() -> void:
+	exiting = true
+	current_charge = 0
 	weapon.sprite.modulate = Color(1, 1, 1)
 
 func run_process(delta: float) -> void:
+	if exiting:
+		return
+
 	weapon.snap_to_chase_node()
 	weapon.sprite.modulate = Color(current_charge / charge_max + 1, 1, 1)
 	current_charge += charge_speed * delta

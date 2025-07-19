@@ -26,3 +26,6 @@ func run_process(delta: float) -> void:
 
 func run_physics_process(delta: float) -> void:
 	pass
+
+func run_integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	pass

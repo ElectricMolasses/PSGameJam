@@ -15,7 +15,6 @@ func handle_action(action: int) -> State:
 	return self
 
 func enter() -> void:
-	weapon.gravity_scale = 0.0
 	weapon.collision_layer = 0
 	weapon.collision_mask = 0
 

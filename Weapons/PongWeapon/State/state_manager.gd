@@ -30,10 +30,12 @@ func _physics_process(delta: float) -> void:
 ##		action: PongWeaponAction
 func handle_action(action: int) -> void:
 	var next_state = current_state.handle_action(action)
-	current_state.exit()
+	if next_state == current_state:
+		return
 
+	current_state.exit()
 	current_state = next_state
-	current_state.enter()
+	next_state.enter()
 
 func set_weapon(weapon: PongWeapon) -> void:
 	self.weapon = weapon

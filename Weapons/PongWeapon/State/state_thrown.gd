@@ -6,6 +6,8 @@ extends State
 var weapon: PongWeapon
 var velocity: float = 0
 
+var exiting: bool = false
+
 
 func handle_action(action: int) -> State:
 	match action:
@@ -14,18 +16,26 @@ func handle_action(action: int) -> State:
 	return self
 
 func enter() -> void:
-	weapon.gravity_scale = gravity
 	weapon.collision_layer = 0 # Weapon Layer
 	# We may need a separate collider to handle enemies vs terrain
-	weapon.collision_mask = 0 # Enemy and Terrain
+	weapon.collision_mask = 0 # Enemy, Terrain and player
+
+	velocity = velocity * weapon.velocity_mul
 
 func exit() -> void:
+	velocity = 0
+	exiting = true
+
+func run_process(delta: float) -> void:
 	pass
 
-func _process(delta: float) -> void:
-	pass
+func run_physics_process(delta: float) -> void:
+	weapon.apply_force(Vector2(velocity, 0) * delta)
+	velocity -= (velocity * 0.1 * delta)
+	# Toggle a flag once the weapon exits the players collider
+	# This will let the player catch the weapon on the next collision
 
-func _physics_process(delta: float) -> void:
+func run_integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	pass
 
 func set_weapon(weapon: PongWeapon) -> void:
