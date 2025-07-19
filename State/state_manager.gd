@@ -9,3 +9,6 @@ func new() -> StateManager:
 
 func _ready() -> void:
 	pass
+
+func handle_action(action: int) -> void:
+	pass

@@ -6,7 +6,7 @@ func new() -> State:
 
 ##	State based input management. Accept all actions and handle the
 ##   allowable ones.
-func handle_action(action: Action) -> State:
+func handle_action(action: int) -> State:
 	return self;
 
 ## Any logic that needs to run when the state is transitioned into.

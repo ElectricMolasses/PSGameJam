@@ -17,3 +17,5 @@ texture = ExtResource("2_kxxi3")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("weapon_rigid_body") instance=ExtResource("3_kxxi3")]
 weapon_rigid_body = NodePath("..")
+
+[node name="Actions" type="Node" parent="."]

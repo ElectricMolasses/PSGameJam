@@ -6,6 +6,7 @@
 [node name="PongWeaponTest" type="Node2D"]
 
 [node name="PongWeapon" parent="." node_paths=PackedStringArray("chase_node") instance=ExtResource("1_re5ie")]
+weapon_width = 64
 chase_node = NodePath("../ChaseNode")
 
 [node name="ChaseNode" type="Node2D" parent="."]
