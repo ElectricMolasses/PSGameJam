@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://nh8m7e0kg4ka"]
-
-[ext_resource type="PackedScene" uid="uid://bfb2ggi0rsmgc" path="res://Weapons/PongWeapon/pong_weapon.tscn" id="1_yj4t2"]
-
-[node name="PongWeaponThrownTest" type="Node2D"]
-
-[node name="WeaponBody" parent="." instance=ExtResource("1_yj4t2")]
