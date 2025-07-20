@@ -1,9 +1,10 @@
 class_name PongWeapon extends RigidBody2D
 
 @export_group("Weapon properties")
-@export_range(100, 10000) var velocity_mul: float = 1.0
-@export var weapon_width: int = 256
+@export_range(100, 10000) var velocity_mul: float = 2000.0
+@export var weapon_width: int = 64
 @export var chase_node: Node2D
+@export var aim_node: Node2D
 
 @export_group("Test properties")
 @export var initial_state: State
@@ -29,8 +30,6 @@ func _ready() -> void:
 	body_collider.shape = CircleShape2D.new()
 	body_collider.shape.radius = weapon_width / 2.0
 
-	self.gravity_scale = 0.0
-
 	state_machine = $StateMachine
 	state_machine.set_weapon(self)
 
@@ -49,3 +48,6 @@ func snap_to_chase_node() -> void:
 		global_transform = chase_node.global_transform
 		PhysicsServer2D.body_set_state(get_rid(), PhysicsServer2D.BODY_STATE_TRANSFORM, chase_node.global_transform)
 		reset_physics_interpolation()
+
+func get_aim_vector() -> Vector2:
+	return aim_node.position - self.position

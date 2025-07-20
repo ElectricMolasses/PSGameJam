@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://nh8m7e0kg4ka"]
+
+[ext_resource type="PackedScene" uid="uid://bfb2ggi0rsmgc" path="res://Weapons/PongWeapon/pong_weapon.tscn" id="1_g4cre"]
+[ext_resource type="Script" uid="uid://bxmp11p51ujxo" path="res://Weapons/follow_mouse.gd" id="2_qi4ux"]
+
+[node name="PongWeaponThrownTest" type="Node2D"]
+
+[node name="WeaponBody" parent="." node_paths=PackedStringArray("chase_node", "aim_node") instance=ExtResource("1_g4cre")]
+mass = 2.0
+velocity_mul = 500.0
+chase_node = NodePath("../ChaseNode")
+aim_node = NodePath("../AimNode")
+
+[node name="ChaseNode" type="Node2D" parent="."]
+position = Vector2(240, 429)
+
+[node name="AimNode" type="Node2D" parent="."]
+script = ExtResource("2_qi4ux")

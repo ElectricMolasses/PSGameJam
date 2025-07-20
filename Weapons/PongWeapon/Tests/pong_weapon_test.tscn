@@ -1,13 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfrogia3yllwu"]
 
 [ext_resource type="PackedScene" uid="uid://bfb2ggi0rsmgc" path="res://Weapons/PongWeapon/pong_weapon.tscn" id="1_vo6si"]
-[ext_resource type="Script" uid="uid://bxmp11p51ujxo" path="res://Weapons/chase_node_test.gd" id="2_ijj6f"]
+[ext_resource type="Script" uid="uid://bxmp11p51ujxo" path="res://Weapons/follow_mouse.gd" id="2_ijj6f"]
 
 [node name="PongWeaponTest" type="Node2D"]
 
 [node name="PongWeapon" parent="." node_paths=PackedStringArray("chase_node") instance=ExtResource("1_vo6si")]
-velocity_mul = 2000.0
-weapon_width = 64
 chase_node = NodePath("../ChaseNode")
 
 [node name="ChaseNode" type="Node2D" parent="."]
