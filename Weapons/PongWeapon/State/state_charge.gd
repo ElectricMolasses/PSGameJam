@@ -1,9 +1,8 @@
 extends State
 
-@export var weapon_rigid_body: RigidBody2D
-@export var weapon: PongWeapon
-@export var charge_speed: float = 1
-@export var charge_max: float = 2
+var charge_speed: float = 1
+var charge_max: float = 2
+var weapon: PongWeapon
 
 var current_charge: float = 0
 var exiting: bool = false
@@ -27,6 +26,8 @@ func enter() -> void:
 	exiting = false
 	weapon.collision_layer = 0
 	weapon.collision_mask = 0
+	initialize_charge_speed()
+	initialize_charge_max()
 
 func exit() -> void:
 	exiting = true
@@ -42,8 +43,11 @@ func run_process(delta: float) -> void:
 	current_charge += charge_speed * delta
 	clamp(current_charge, 0, charge_max)
 
-func run_physics_process(_delta: float) -> void:
-	pass
-
 func set_weapon(weapon: PongWeapon) -> void:
 	self.weapon = weapon
+
+func initialize_charge_speed() -> void:
+	charge_speed = weapon.get_charge_speed()
+
+func initialize_charge_max() -> void:
+	charge_max = weapon.get_charge_max()

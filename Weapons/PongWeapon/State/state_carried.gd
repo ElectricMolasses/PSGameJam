@@ -23,10 +23,6 @@ func exit() -> void:
 
 func run_process(_delta: float) -> void:
 	weapon.snap_to_chase_node()
-	pass
-
-func run_physics_process(_delta: float) -> void:
-	pass
 
 func set_weapon(weapon: PongWeapon) -> void:
 	self.weapon = weapon

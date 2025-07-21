@@ -5,6 +5,8 @@ class_name PongWeapon extends RigidBody2D
 @export var weapon_width: int = 64
 @export var chase_node: Node2D
 @export var aim_node: Node2D
+@export var charge_speed: float = 1
+@export var charge_max: float = 2
 
 @export_group("Test properties")
 @export var initial_state: State
@@ -51,3 +53,9 @@ func snap_to_chase_node() -> void:
 
 func get_aim_vector() -> Vector2:
 	return aim_node.position - self.position
+
+func get_charge_speed() -> float:
+	return charge_speed
+
+func get_charge_max() -> float:
+	return charge_max
