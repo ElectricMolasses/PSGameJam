@@ -35,6 +35,7 @@ func handle_action(action: int) -> void:
 	current_state = next_state
 	next_state.enter()
 
+@warning_ignore("shadowed_variable")
 func set_weapon(weapon: PongWeapon) -> void:
 	self.weapon = weapon
 	for state in self.get_children():

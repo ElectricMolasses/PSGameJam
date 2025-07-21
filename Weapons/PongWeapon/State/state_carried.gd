@@ -24,5 +24,6 @@ func exit() -> void:
 func run_process(_delta: float) -> void:
 	weapon.snap_to_chase_node()
 
+@warning_ignore("shadowed_variable")
 func set_weapon(weapon: PongWeapon) -> void:
 	self.weapon = weapon

@@ -43,6 +43,7 @@ func run_process(delta: float) -> void:
 	current_charge += charge_speed * delta
 	clamp(current_charge, 0, charge_max)
 
+@warning_ignore("shadowed_variable")
 func set_weapon(weapon: PongWeapon) -> void:
 	self.weapon = weapon
 
