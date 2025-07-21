@@ -15,5 +15,4 @@ shape = SubResource("CircleShape2D_71kk5")
 [node name="WeaponSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_kxxi3")
 
-[node name="StateMachine" parent="." node_paths=PackedStringArray("weapon_rigid_body") instance=ExtResource("3_kxxi3")]
-weapon_rigid_body = NodePath("..")
+[node name="StateMachine" parent="." instance=ExtResource("3_kxxi3")]

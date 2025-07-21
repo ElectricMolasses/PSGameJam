@@ -1,7 +1,5 @@
 extends StateManager
 
-@export var weapon_rigid_body: RigidBody2D
-
 var weapon: PongWeapon
 
 var carried_state: State
