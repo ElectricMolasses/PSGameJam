@@ -1,7 +1,7 @@
 class_name PongWeapon extends RigidBody2D
 
 @export_group("Weapon properties")
-@export_range(100, 10000) var velocity_mul: float = 2000.0
+@export_range(100, 10000) var velocity_mul: float = 500.0
 @export var weapon_width: int = 64
 @export var chase_node: Node2D
 @export var aim_node: Node2D
