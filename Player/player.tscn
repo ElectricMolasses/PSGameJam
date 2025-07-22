@@ -282,7 +282,6 @@ size = Vector2(113.5, 207)
 
 [node name="Player" type="RigidBody2D"]
 lock_rotation = true
-linear_damp = 0.5
 script = ExtResource("1_d30e8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
