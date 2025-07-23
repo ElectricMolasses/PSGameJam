@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1nbnjo2808ij"]
+
+[ext_resource type="Script" uid="uid://dt6bar65ipx5a" path="res://Weapons/PongWeapon/State/state_thrown.gd" id="1_fr1k0"]
+
+[node name="Thrown" type="Node"]
+script = ExtResource("1_fr1k0")

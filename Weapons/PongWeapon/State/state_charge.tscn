@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pxiq1xpo8o2r"]
+
+[ext_resource type="Script" uid="uid://dg6id73stkebv" path="res://Weapons/PongWeapon/State/state_charge.gd" id="1_73gja"]
+
+[node name="Charge" type="Node"]
+script = ExtResource("1_73gja")

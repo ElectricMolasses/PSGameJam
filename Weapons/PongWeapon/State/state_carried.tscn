@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxm2x67uis8qv"]
+
+[ext_resource type="Script" uid="uid://bfsp1nbm2iwfp" path="res://Weapons/PongWeapon/State/state_carried.gd" id="1_gua77"]
+
+[node name="Carried" type="Node"]
+script = ExtResource("1_gua77")
