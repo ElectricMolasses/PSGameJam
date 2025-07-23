@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var force: int = 50
 @export var max_speed: int = 600
-@export var acceleration: float = 600 * 50
+@export var acceleration: float = 600
 @export var jump_acceleration: int = 1000
 var jump_triggered: bool = false
 
@@ -10,7 +10,6 @@ func _ready():
 	pass
 
 func _physics_process(delta: float) -> void:
-	pass
 	move_player(delta)
 
 func move_player(delta: float) -> void:
@@ -32,7 +31,8 @@ func move_player(delta: float) -> void:
 	input_direction.x = clamp(input_direction.x, -max_speed, max_speed)
 	
 	if input_direction != Vector2.ZERO:
-		apply_central_force(input_direction)
+		print(input_direction)
+		self.move_and_collide(input_direction)   # <-- This seems to be the best answer for now
 	
 	if jump_triggered: 
 		jump_triggered = false
